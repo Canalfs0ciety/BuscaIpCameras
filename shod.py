@@ -15,6 +15,7 @@ print('https://www.canalfsociety.com/')
 print()
 
 print('Va ao site shodan.io e crie uma conta caso nao tenha, depois va em Account e copie a Api Key')
+time.sleep(3)
 
 #Pegue sua API Key no site do shodan na aba Account e cole na hora que pedir
 key = input('Digite sua API Key do Shodan: ')
