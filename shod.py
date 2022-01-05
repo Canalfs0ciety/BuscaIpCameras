@@ -19,11 +19,15 @@ key = input('Digite sua API Key do Shodan: ')
 
 api = Shodan(key)
 
+cidade = (input('Digite o nome da cidade que voce quer pesquisar os Ips: '))
+
+pesquisa = ('port:37777 org:"CLARO S.A." city:"%s" product:"Dahua DVR"' % (cidade))
+
 try:
         # Aqui é o parametro de pesquisa
         # Ele esta configurado para retornar os ips de cameras de São Paulo, só mude o nome da cidade para ver de outras
         # Caso não retorne nenhum ip para a cidade que voce pesquisar, verifique se voce colocou os acentos nos nomes da cidade.
-        results = api.search('port:37777 city:"são paulo" org:"CLARO S.A." product:"Dahua DVR"')
+        results = api.search(pesquisa)
 
         # Não precisa mexer nessa linha, aqui vai retornar quantos ips foram encontardos
         print('Resultados Encontrados: {}'.format(results['total']))
