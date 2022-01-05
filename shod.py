@@ -7,11 +7,15 @@
 
 from shodan import Shodan
 from shodan.exception import APIError
+import time
 
+print()
+print('ACOMPANHE NOSSO SITE DE NOTICIAS')
+print('https://www.canalfsociety.com/')
+print()
 
 #Pegue sua API Key no site do shodan na aba Acount e cole onde esta escrito MINHA API
 api = Shodan('MINHA API')
-
 
 try:
         # Aqui é o parametro de pesquisa
@@ -21,17 +25,14 @@ try:
 
         # Não precisa mexer nessa linha, aqui vai retornar quantos ips foram encontardos
         print('Resultados Encontrados: {}'.format(results['total']))
-        
-        
-           
+                       
         for result in results['matches']:          
-              
-          
+                        
           nl = '\n'
           ip = (format(result['ip_str']),nl)
           
-          #Crie um Arquivo txt na mesma pasta do projeto, o meu esta com o nome dispo.txt
-          with open("dispo.txt", "a") as l:
+          # Vai Criar um txt no mesmo local do projeto, é onde vai salvar os ips
+          with open("dispositivo.txt", "a") as l:
             l.writelines(ip)   
           
 #Caso der algum erro vai retornar essa mensagem         
@@ -39,4 +40,8 @@ except Shodan.APIError:
         print('Error: {}'.format(APIError))
         
 # Ele vai retornar quantos ips foram localizados e salvar todos eles no arquivo txt!!!
- 
+
+print()
+print('A CONSULTA FOI SALVO EM >> dispositivo.txt')
+
+time.sleep(5)
