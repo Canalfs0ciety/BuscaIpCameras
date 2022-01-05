@@ -3,6 +3,8 @@
 ### Criado por @canalfsociety ###
 ### Com a ajuda do @Perverso ###
 
+######## VISITE MEU SITE ########## canalfsociety.com ############
+
 from shodan import Shodan
 from shodan.exception import APIError
 
