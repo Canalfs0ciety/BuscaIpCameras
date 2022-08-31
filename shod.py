@@ -4,6 +4,7 @@
 ### Com a ajuda do @Perverso ###
 
 ######## VISITE MEU SITE ########## canalfsociety.com ############
+###### BAIXE MEU APP NA PLAYSTORE ######## BOLETIM TEC ###########
 
 from shodan import Shodan
 from shodan.exception import APIError
@@ -14,7 +15,9 @@ print('ACOMPANHE NOSSO SITE DE NOTICIAS')
 print('https://www.canalfsociety.com/')
 print()
 
-print('Va ao site shodan.io e crie uma conta caso nao tenha, depois va em Account e copie a Api Key')
+print('Va ao site shodan.io e crie uma conta caso nao tenha,\
+aconselho criar usando um email .edu pois vc tera acesso premium.\
+Depois va em Account e copie a Api Key')
 time.sleep(3)
 
 #Pegue sua API Key no site do shodan na aba Account e cole na hora que pedir
@@ -28,7 +31,6 @@ pesquisa = ('port:37777 org:"CLARO S.A." city:"%s" product:"Dahua DVR"' % (cidad
 
 try:
         # Aqui é o parametro de pesquisa
-        # Ele esta configurado para retornar os ips de cameras de São Paulo, só mude o nome da cidade para ver de outras
         # Caso não retorne nenhum ip para a cidade que voce pesquisar, verifique se voce colocou os acentos nos nomes da cidade.
         results = api.search(pesquisa)
 
